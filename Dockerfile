@@ -12,14 +12,14 @@ COPY ./requirements.txt /requirements.txt
 # Installs the requirements onto the Docker image
 RUN pip install -r /requirements.txt
 
-# Creates an empty folder on the Docker image, called /app
-RUN mkdir /app
+# Creates an empty folder on the Docker image, called /setup_project
+RUN mkdir /setup_project
 # Switches to that folder as the default directory
-WORKDIR /app
-# Copies the /app folder from our local machine to the /app folder
-# created on our image. This allows us to take the project code
-# and copy it into our Docker image.
-COPY ./app /app
+WORKDIR /setup_project
+# Copies the /setup_project folder from our local machine to the
+# /setup_project folder created on our image. This allows us to take
+# the project code and copy it into our Docker image.
+COPY ./setup_project /setup_project
 
 # Created a user made only to run the application
 RUN adduser -D user

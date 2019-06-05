@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  # Name of service
+  setup_project:
+    build:
+      # Set context to current directory
+      context: .
+    # Map the local 8000 port to the 8000 port of our image
+    ports:
+      - "8000:8000"
+    # Maps volume from our local machine into our Docker container
+    # When a file is changed, it will automatically be updated in the container
+    # No need to restart Docker to get the changes into effect
+    volumes:
+      - ./setup_project:/setup_project
+    # A command that is used to run our application in our Docker container
+    # Shell command to runserver on local port
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
