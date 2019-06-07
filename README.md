@@ -47,7 +47,7 @@ https://travis-ci.org/
 
 9) Docker commands
 
-docker-compose run setup_project sh -c "python manage.py test && flake8"
+docker-compose run setup_project sh -c "python setup_project/manage.py test && flake8"
 docker-compose run setup_project sh -c "python manage.py startapp appname"
 
 docker-compose run setup_project sh -c "python manage.py migrate"
