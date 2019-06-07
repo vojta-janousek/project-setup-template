@@ -29,6 +29,7 @@ Finish with: "docker build ."
 Tool that allows us to run our Docker image from our project location
 
 "docker-compose build"
+"docker-compose up"
 
 7) Create a Django project
 
@@ -43,3 +44,20 @@ https://travis-ci.org/
 - Login with GitHub and activate Travis on the repository
 - Create file .travis.yml in root directory and file .flake8 in project directory
 - In .flake8, exclude all files that should not be linted
+
+9) Docker commands
+
+docker-compose run setup_project sh -c "python manage.py test && flake8"
+docker-compose run setup_project sh -c "python manage.py startapp appname"
+
+docker-compose run setup_project sh -c "python manage.py migrate"
+docker-compose run setup_project sh -c "python manage.py makemigrations appname"
+docker-compose run setup_project sh -c "python manage.py createsuperuser"
+
+
+
+Django>=2.2.2,<2.3.0
+djangorestframework>=3.9.4,<3.10.0
+
+flake8>=3.7.7,<3.8.0
+Pillow>=6.0.0,<6.1.0
