@@ -25,4 +25,5 @@ COPY . /code/
 # USER user
 
 # Installs the requirements onto the Docker image
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
