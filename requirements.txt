@@ -2,3 +2,4 @@ Django==2.2.0
 djangorestframework==3.9.0
 
 flake8==3.7.0
+Pillow==6.0.0

@@ -18,12 +18,21 @@ WORKDIR /code
 # the project code and copy it into our Docker image.
 COPY . /code/
 
-# Created a user made only to run the application
-# RUN adduser -D user
-# Switches Docker to that user, othewise it would use our root account
-# which is not desirable
-# USER user
+RUN pip install --upgrade pip
+
+# RUN apk --update add jpeg-dev  \\
+# RUN apk --update add --virtual gcc zlib zlib-dev
+
+# Installs Pillow dependencies
+RUN apk --update add jpeg-dev
+RUN apk --update add --virtual .tmp-build-deps \
+    gcc libc-dev linux-headers zlib zlib-dev
 
 # Installs the requirements onto the Docker image
-RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
+
+# Created a user made only to run the application
+# RUN adduser -D user
+# Switches Docker to that user, otherwise it would use our root account
+# which is not desirable
+# USER user
