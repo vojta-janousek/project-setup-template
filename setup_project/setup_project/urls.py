@@ -26,4 +26,5 @@ urlpatterns = [
 # Helper function to return a URL pattern for serving files in debug mode
 # Not to be used in production
 if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)
