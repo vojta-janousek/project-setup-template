@@ -1,7 +1,5 @@
+Products Application:
 
-
-1) Added the app to the app list in settings
-2) Created models for Manufacturer and Product
-3) Created views for both models
-4) Created a folder templates/products with product_detail and product_list
-5) Created a urls.py file
+A simple application with two basic models that are serialized only using
+pure Django. Both have their own list and detail views presented
+in the JSON format.
