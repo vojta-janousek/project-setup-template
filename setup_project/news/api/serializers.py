@@ -19,7 +19,6 @@ class ArticleSerializer(serializers.Serializer):
         print(validated_data)
         return Article.objects.create(**validated_data)
 
-
     def update(self, instance, validated_data):
         instance.author = validated_data.get('author', instance.author)
         instance.title = validated_data.get('title', instance.title)
