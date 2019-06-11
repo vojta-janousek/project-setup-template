@@ -20,7 +20,8 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('products.urls')),
+    path('products/api/', include('products.urls')),
+    path('news/api/', include('news.api.urls')),
 ]
 
 # Helper function to return a URL pattern for serving files in debug mode
