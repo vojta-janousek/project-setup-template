@@ -23,6 +23,7 @@ urlpatterns = [
     path('products/api/', include('products.urls')),
     path('news/api/', include('news.api.urls')),
     path('jobs/', include('job_offers.api.urls')),
+    # path('ebooks/', include('ebooks.urls')),
 ]
 
 # Helper function to return a URL pattern for serving files in debug mode
