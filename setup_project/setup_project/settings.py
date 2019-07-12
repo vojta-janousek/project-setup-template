@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'news',
     'job_offers',
     'ebooks',
+    'profiles',
 ]
 
 MIDDLEWARE = [
