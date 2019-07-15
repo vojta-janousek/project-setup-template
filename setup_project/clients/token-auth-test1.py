@@ -17,5 +17,6 @@ def client():
     response_data = response.json()
     print(response_data)
 
+
 if (__name__ == '__main__'):
     client()
